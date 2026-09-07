@@ -92,7 +92,7 @@ Ova optimizacija omogućava da LZW bude konkurentan sa entropijskim kodovima.
 
 1. Pripremiti ulazni fajl (npr. `primer.txt`) u folderu gde je buildovana aplikacija.
 2. Pokrenuti izvršni fajl `Projekat1.exe` ili startovati iz Visual Studio okruženja (F5).
-3. Uneti putanju do fajla kada se zatraži.
+3. Uneti putanju do fajla kada se zatraži.(u ovom slucaju samo uneti npr. primer.txt)
 4. Program automatski obrađuje fajl, primenjuje sve algoritme, prikazuje rezultate kompresije i dekompresije na konzoli.
 5. Kompresovani fajlovi se smeštaju u `bin\Debug` folderu projekta.
 
