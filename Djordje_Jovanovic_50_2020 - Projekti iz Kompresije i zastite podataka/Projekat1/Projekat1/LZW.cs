@@ -109,10 +109,10 @@ namespace Projekat1
                 {
                     sekvenca = recnik[noviKod];
                 }
-                // Specijalni LZW slucaj kada se naidje na kod koji se upravo kreira
-                else if (noviKod == sledeciKod)
+                // Specijalni LZW slucaj kada se naidje na kod koji se upravo kreira(koder-dekoder konflikt)
+                else if (noviKod == sledeciKod)//stigao je kod koji dekoder jos uvek nema u recniku
                 {
-                    byte[] prethodna = recnik[stariKod];
+                    byte[] prethodna = recnik[stariKod];//uzima prethodnu frazu koju ima u recniku
                     sekvenca = new byte[prethodna.Length + 1];
                     Array.Copy(prethodna, sekvenca, prethodna.Length);
 

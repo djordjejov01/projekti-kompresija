@@ -9,10 +9,10 @@ namespace Projekat2
         static void Main(string[] args)
         {
             // Parametri iz teksta zadatka
-            int n = 15;
-            int m = 9;          // n - k = 9 (k = 6)
-            int wr = 5;         
-            int wc = 3;         
+            int n = 15;//broj kolona
+            int m = 9;          // n - k = 9 (k = 6)//broj redova-kontrolnih bitova//k-broj korisnih bitova
+            int wr = 5;         //broj jedinica u redu
+            int wc = 3;         //broj jedinica u koloni
             int brojIndeksa = 502020; // Fiksiran seed na broj indeksa 50/2020
 
             Console.WriteLine("==================================================");
@@ -42,7 +42,7 @@ namespace Projekat2
             Console.WriteLine("\n==================================================");
             Console.WriteLine("3. GALLAGER B ALGORITAM ");
             Console.WriteLine("==================================================");
-            GallagerBDekoder dekoder = new GallagerBDekoder(H, th0: 0.5, th1: 0.5); //[cite: 1]
+            GallagerBDekoder dekoder = new GallagerBDekoder(H, th0: 0.5, th1: 0.5); 
 
             // Test sa jednostavnom greskom na poziciji 2
             int[] testGreska = new int[n];
@@ -93,8 +93,8 @@ namespace Projekat2
             }
         }
 
-        static List<int[]> GenerisiVektoreTezine(int n, int tezina)
-        {
+        static List<int[]> GenerisiVektoreTezine(int n, int tezina)//sve moguce kombinacije vektora duzine n
+        {                                                          //koje imaju zadati broj jedinica
             List<int[]> rezultati = new List<int[]>();
             Kombinuj(new int[n], 0, 0, tezina, rezultati);
             return rezultati;

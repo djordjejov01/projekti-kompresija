@@ -80,8 +80,8 @@ namespace Projekat2
                         int paritet = 0;
                         foreach (int k in susediC[i])
                         {
-                            if (k != j)
-                                paritet ^= x[k];
+                            if (k != j)//gleda ostale bitove osim tog j
+                                paritet ^= x[k];//xor suma 
                         }
                         w[i, j] = paritet;
                     }
@@ -125,7 +125,7 @@ namespace Projekat2
                     }
                 }
 
-                x = noviX;
+                x = noviX;//azuriranje nakon sto su izracunate sve nove vrednosti
             }
 
             // Posle maksimalnog broja iteracija

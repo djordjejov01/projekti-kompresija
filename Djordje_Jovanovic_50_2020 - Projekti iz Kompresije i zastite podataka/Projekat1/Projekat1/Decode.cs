@@ -26,7 +26,7 @@ namespace Projekat1
         }
 
         // Cita bitove iz fajla i vraca tacno onoliko bitova koliko je zapisano
-        public static string Ostatak(BinaryReader reader, int brojBitova)
+        /*public static string Ostatak(BinaryReader reader, int brojBitova)
         {
             int brojBajtova = (brojBitova + 7) / 8;
             byte[] podaci = reader.ReadBytes(brojBajtova);
@@ -80,7 +80,7 @@ namespace Projekat1
                 return " je uspela.";
 
             return " nije uspela.";
-        }
+        }*/
 
         // Poredi originalni fajl i izlaz kao niz bajtova
         public static string UporediBajtove(string originalniFajl, byte[] output)

@@ -2,7 +2,8 @@
 
 namespace Projekat1
 {
-    // Klasa koja cuva jedan ucitani simbol i njegov kod
+    // Klasa koja cuva jedan ucitani simbol i njegov kod, namenjena za proces dekompresije
+    //predstavlja jedan red u tabeli kodova
     public class UcitaniSimbol
     {
         // Vrednost bajta koji simbol predstavlja

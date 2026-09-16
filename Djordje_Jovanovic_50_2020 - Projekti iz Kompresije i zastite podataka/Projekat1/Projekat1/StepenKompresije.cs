@@ -14,7 +14,7 @@ namespace Projekat1
             if (izlaz == 0)
                 return 0.0;
 
-            double stepen = (double)ulaz / izlaz;
+            double stepen = (double)ulaz / izlaz;//velicina orig/velicina kompresovaong
             return Math.Round(stepen, 4);
         }
 

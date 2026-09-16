@@ -6,7 +6,7 @@
         // Vrednost bajta koji simbol predstavlja (0-255)
         public int Znak { get; private set; }
 
-        // Verovatnoca pojavljivanja simbola
+        // Verovatnoca pojavljivanja simbola(frekvencija)
         public double P { get; private set; }
 
         // Binarni kod koji ce biti dodeljen simbolu

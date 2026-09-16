@@ -25,9 +25,9 @@ namespace Projekat2
 
             for (int i = 0; i < ukupnoKombinacija; i++)
             {
-                int[] v = BrojUVektor(i, n);
+                int[] v = BrojUVektor(i, n);//koncertuje broj u binarni niz duzine 15 bitova
                 int[] sindrom = H.PomnoziSaVektorom(v);
-                int tezina = v.Sum();
+                int tezina = v.Sum();//hamingova tezina-ukupan broj 1-ca u nizu
 
                 // Kodno rastojanje: minimalna tezina nenulte kodne reci (gde je sindrom = 0)
                 if (sindrom.All(x => x == 0) && tezina > 0)
@@ -37,10 +37,10 @@ namespace Projekat2
                 }
 
                 // Tabela sindroma: čuvamo korektor sa najmanjom tezinom
-                string sindromKljuc = string.Join("", sindrom);
-                if (!Mapa.ContainsKey(sindromKljuc))
+                string sindromKljuc = string.Join("", sindrom);//pretvara binarni niz sindroma u string
+                if (!Mapa.ContainsKey(sindromKljuc))//akose prvi put pojavljuje
                 {
-                    Mapa[sindromKljuc] = v;
+                    Mapa[sindromKljuc] = v;//pamti se v kao korektor
                 }
                 else
                 {
@@ -53,12 +53,13 @@ namespace Projekat2
                 }
             }
         }
-
+        //pretvara broj u binarni niz
+        //duzina 15 bita
         private int[] BrojUVektor(int broj, int duzina)
         {
             int[] v = new int[duzina];
             for (int i = 0; i < duzina; i++)
-                v[duzina - 1 - i] = (broj >> i) & 1;
+                v[duzina - 1 - i] = (broj >> i) & 1;//smesta s desna na levo(od najnize do najvise tezine)
             return v;
         }
 
@@ -88,7 +89,7 @@ namespace Projekat2
                 throw new ArgumentException($"Vektor mora imati duzinu {H.BrojKolona}");
 
             int[] sindrom = H.PomnoziSaVektorom(y);
-            string sindromKljuc = string.Join("", sindrom);
+            string sindromKljuc = string.Join("", sindrom);//pretvara u string
 
             // Ako sindrom nije u tabeli, ne mozemo da odredimo korektor.
             if (!Mapa.ContainsKey(sindromKljuc))

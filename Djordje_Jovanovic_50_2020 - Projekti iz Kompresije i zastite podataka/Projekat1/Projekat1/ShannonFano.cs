@@ -79,7 +79,7 @@ namespace Projekat1
             // Zamena svakog bajta njegovim dodeljenim binarnim kodom u obliku stringa
             foreach (byte b in podaci)
             {
-                if (mapa.TryGetValue(b, out string kod))
+                if (mapa.TryGetValue(b, out string kod))//proverava da li postoji definisan kod u recniku
                     kodiran.Append(kod);
             }
 
@@ -98,7 +98,7 @@ namespace Projekat1
 
                 // Dopunjavanje poslednjeg bajta nulama ako nema tacno 8 bitova
                 if (deo.Length < 8)
-                    deo = deo.PadRight(8, '0');
+                    deo = deo.PadRight(8, '0');//dopunjava nulama poslednji komad
 
                 // Konverzija stringa od 8 bitova u jedan bajt tipa byte
                 bajtovi.Add(Convert.ToByte(deo, 2));
@@ -153,7 +153,7 @@ namespace Projekat1
                 int brojBitova = reader.ReadInt32();
                 int brojBajtova = reader.ReadInt32();
 
-                // Citanje svih spakovanih bajtova
+                // Citanje svih spakovanih bajtova(telo kompresovanog fajla)
                 byte[] podaci = reader.ReadBytes(brojBajtova);
 
                 // Pretvaranje tih bajtova nazad u tekstualni binarni string

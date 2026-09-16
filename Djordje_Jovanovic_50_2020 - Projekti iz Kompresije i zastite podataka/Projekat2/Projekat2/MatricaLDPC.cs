@@ -49,15 +49,15 @@ namespace Projekat2
             for (int grupa = 1; grupa < Wc; grupa++)
             {
                 // Generisemo nasumicnu permutaciju indeksa kolona (0..n-1)
-                int[] permutacija = Enumerable.Range(0, BrojKolona)
-                                              .OrderBy(x => rng.Next())
+                int[] permutacija = Enumerable.Range(0, BrojKolona)//niz indeksa
+                                              .OrderBy(x => rng.Next())//dodeljuje nasumicni broj i sortira se po tom broju
                                               .ToArray();
 
                 // Primenjujemo permutaciju na kolone za svaki red u grupi
                 for (int i = 0; i < redovaUGrupi; i++)
                 {
                     int izvorniRed = i;
-                    int ciljniRed = grupa * redovaUGrupi + i;
+                    int ciljniRed = grupa * redovaUGrupi + i;//odredjuje tacnu poziciju reda
 
                     // Kljucna izmena: permutujemo KOLONE, ne redove
                     for (int j = 0; j < BrojKolona; j++)
@@ -126,7 +126,7 @@ namespace Projekat2
         // Množenje H * x^T u polju GF(2)-konacno polje sa 2 elementa
         public int[] PomnoziSaVektorom(int[] x)
         {
-            if (x.Length != BrojKolona)
+            if (x.Length != BrojKolona)//provera da li je mnozenje moguce
             {
                 throw new ArgumentException($"Vektor mora imati dužinu {BrojKolona}");
             }
@@ -136,7 +136,7 @@ namespace Projekat2
             {
                 int suma = 0;
                 for (int j = 0; j < BrojKolona; j++)
-                    suma += H[i, j] * x[j];
+                    suma += H[i, j] * x[j];//skalarni prozivod i-tog reda matrice i vekora x
                 sindrom[i] = suma % 2;
             }
             return sindrom;
